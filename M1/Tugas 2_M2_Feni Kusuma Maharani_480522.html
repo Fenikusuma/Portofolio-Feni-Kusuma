@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Wisata Populer di Indonesia</title>
+        <meta charset="utf-8">
+        <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+        <style>
+            *{box-sizing:border-box;}
+            body {font-family: Arial, Helvetica, sans-serif;}
+            /*Header*/
+            header{
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                text-align: center;
+                padding: 10px;
+                z-index: 1000;
+                background-color: blue;
+                background-size: auto;
+                font-size: 32px;
+                color: white;
+            }
+            /*Two columns*/
+            nav{
+                float: left;
+                width: 15%;
+                height: 1800px;
+                background: grey;
+                padding-top: 170px;
+                padding-left: 40px;
+            }
+            /*Style List Lokasi*/
+            nav ul{
+                list-style-type: none;
+                padding: 0;
+                position:fixed;
+            }
+            article{
+                float: left;
+                width: 85%;
+                background-color:aliceblue;
+                height: auto;
+                text-align: justify;
+                text-emphasis-position: 50px;
+                padding-top: 180px;  /* Sesuaikan dengan tinggi header */
+                padding-bottom: 10px;
+                scroll-margin-right:50px;
+            }
+            /*Clear floats after the columns*/
+            section::after{
+                content:"";
+                display:table;
+                clear: both;
+            }
+            /*Footer*/
+            footer{
+                background-color:blue ;
+                padding:10px;
+                text-align:center;
+                color:white;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                padding: 10px 0;
+                z-index: 1000;
+            }
+            @media (max-width:400px) {
+                nav, article{
+                    width:100%;
+                    height:auto;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Wisata Populer di Indonesia</h1>
+        </header>
+        <section>
+            <nav>
+                <ul>
+                    <li><a href="#bali">Bali</a></li>
+                    <li><a href="#lombok">Lombok</a></li>
+                    <li><a href="#yogyakarta">Yogyakarta</a></li>
+                </ul>
+            </nav>
+            <article class="card" id="bali">
+                <h2>Bali</h2>
+                <img src="https://www.blibli.com/friends-backend/wp-content/uploads/2023/10/B1000125-Cover-pura-indah-di-bali-scaled.jpg" alt="Bali" style="height:300px;width:400px;float:right;margin-left: 10px;">
+                <p>Bali adalah salah satu destinasi wisata paling populer di Indonesia yang terkenal dengan keindahan alamnya, budaya yang kaya, dan keramahan penduduknya. Pulau ini menawarkan berbagai tempat wisata, mulai dari pantai-pantai eksotis seperti Kuta, Seminyak, dan Nusa Dua, hingga pemandangan alam yang menakjubkan di Ubud dan Kintamani. Selain itu, Bali juga memiliki banyak pura bersejarah seperti Pura Tanah Lot dan Pura Besakih yang menjadi ikon spiritual dan daya tarik wisata.
+                <br>
+                <br>
+                Selain keindahan alam dan budayanya, Bali juga menawarkan berbagai aktivitas menarik bagi wisatawan. Bagi pecinta petualangan, tersedia aktivitas seperti selancar di Pantai Uluwatu, menyelam di Tulamben, atau mendaki Gunung Batur untuk menikmati matahari terbit. Sementara itu, bagi yang ingin menikmati suasana lebih santai, wisatawan dapat mengunjungi spa tradisional, menikmati kuliner khas Bali seperti babi guling dan ayam betutu, atau berbelanja di pasar seni Ubud dan Seminyak.
+                <br>
+                <br>
+                Bali juga terkenal dengan berbagai festival dan tradisi unik yang menarik perhatian wisatawan. Salah satunya adalah Hari Raya Nyepi, di mana seluruh aktivitas di Bali dihentikan selama sehari untuk perenungan dan meditasi. Selain itu, ada juga Festival Ogoh-Ogoh yang meriah sebelum Nyepi, serta upacara adat seperti Ngaben dan Melasti yang mencerminkan kekayaan budaya Hindu Bali. Dengan berbagai daya tarik tersebut, tidak heran jika Bali selalu menjadi pilihan utama bagi wisatawan lokal maupun mancanegara.
+                </p>
+            </article>
+            <article class="card" id="lombok">
+                <h2>Lombok</h2>
+                <img src="https://blog.antavaya.com/wp-content/uploads/2020/03/Destinasi-Wisata-Lombok-Paling-Populer-Tahun-2020-Sumber-Instagram-kezyayoanas_.jpg" alt="Lombok" style="height:300px;width:400px;float:right;margin-left: 10px;">
+                <p>Lombok, sebuah pulau eksotis di Nusa Tenggara Barat, menawarkan keindahan alam yang menakjubkan dengan pantai berpasir putih, air laut yang jernih, serta budaya yang kaya. Salah satu destinasi terkenal adalah Pantai Kuta Mandalika, yang memiliki pasir unik seperti butiran merica dan ombak yang cocok untuk berselancar. Selain itu, Gili Trawangan, Gili Meno, dan Gili Air menjadi surga bagi penyelam dan snorkeler dengan terumbu karang yang memukau dan kehidupan laut yang beragam. Keindahan alam Lombok semakin sempurna dengan pemandangan Gunung Rinjani, gunung berapi tertinggi kedua di Indonesia yang menawarkan jalur pendakian menantang serta pemandangan Danau Segara Anak yang menawan.
+                <br>
+                <br>
+                Selain keindahan alamnya, Lombok juga memiliki budaya dan tradisi yang unik. Suku Sasak, penduduk asli Lombok, masih melestarikan berbagai adat istiadat seperti tenun tradisional di Desa Sade dan Desa Sukarara. Kuliner khas seperti ayam taliwang dan plecing kangkung juga menjadi daya tarik bagi wisatawan yang ingin mencicipi cita rasa khas Lombok. Selain itu, berbagai acara budaya seperti Bau Nyale, festival menangkap cacing laut yang dikaitkan dengan legenda Putri Mandalika, semakin memperkaya pengalaman wisata di pulau ini. Dengan keindahan alam dan budaya yang khas, Lombok menjadi destinasi wisata yang wajib dikunjungi bagi para pencinta petualangan dan budaya.
+                </p>
+            </article>
+            <article class="card" id="yogyakarta">
+                <h2>Yogyakarta</h2>
+                <img src="https://www.yogyes.com/id/yogyakarta-tourism-object/candi/prambanan/1.jpg" alt="Jogja" style="height:300px;width:400px;float:right;margin-left: 10px;">
+                <p>Yogyakarta, atau yang akrab disebut Jogja, adalah salah satu destinasi wisata paling populer di Indonesia. Kota ini menawarkan berbagai tempat wisata yang kaya akan sejarah, budaya, dan keindahan alam. Salah satu ikon utama Jogja adalah Candi Borobudur dan Candi Prambanan, yang merupakan warisan dunia UNESCO. Selain itu, Keraton Yogyakarta dan Tamansari juga menjadi daya tarik wisata budaya yang menunjukkan kehidupan kerajaan Jawa di masa lalu. Bagi pecinta alam, kawasan Gunung Merapi dan Pantai Parangtritis menawarkan pemandangan spektakuler serta pengalaman seru seperti jeep adventure dan paralayang.
+                <br>
+                <br>
+                Selain wisata sejarah dan alam, Jogja juga terkenal dengan suasana kota yang ramah dan kuliner khasnya yang lezat. Malioboro menjadi pusat wisata belanja dan kuliner, di mana pengunjung dapat menemukan beragam oleh-oleh khas seperti batik, gudeg, dan bakpia. Tidak jauh dari Malioboro, ada kawasan Taman Sari dan Alun-Alun Kidul yang menawarkan pengalaman unik, seperti menaiki sepeda lampu dan mencoba tradisi berjalan melewati dua pohon beringin kembar dengan mata tertutup. Dengan berbagai pilihan wisata yang menarik, Jogja selalu menjadi destinasi yang tak pernah membosankan bagi wisatawan.
+                </p>
+            </article>
+        </section>
+        <footer>
+            <p>Copyright @Feni Kusuma Maharani, 21/480522/TK/53020</p>
+        </footer>
+    </body>
+</html>
