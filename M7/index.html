@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leaflet Web Map with Markers</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" /> 
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+    <style>
+        body {
+            margin: 0;
+        }
+        #map {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <center>  
+		<h2 class="masthead-heading text-uppercase mb-0"; style="color: black;">Peta Rekomendasi Cafe di Sekitar UGM</h2>
+	</center>
+	<center> <div id="map"> </div> </center>
+    <div id="map"></div>
+    <script>
+        // Inisialisasi peta
+        let map = L.map('map').setView([-7.760, 110.380], 13);
+
+        // Menambahkan tile layer
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Menambahkan marker
+        var Arah = L.marker([-7.7605444, 110.3809541]).bindPopup('Arah Coffee Pandawa').addTo(map);
+        var ILC = L.marker([-7.7600663, 110.3810964]).bindPopup('Internet Learning Center').addTo(map);
+        var MCD = L.marker([-7.7623764, 110.3791398]).bindPopup('Mc Donald Jalan Kaliurang').addTo(map);
+        var Fordo = L.marker([-7.7622228, 110.3797297]).bindPopup('Fordo').addTo(map);
+        var Tomoro = L.marker([-7.7614189, 110.3798558]).bindPopup('TOMORO Coffee Jakal').addTo(map);
+        var Kopken = L.marker([-7.7611229, 110.3802456]).bindPopup('Kopi Kenangan Jalan Kaliurang').addTo(map);
+        var Mosu = L.marker([-7.7446307, 110.3756755]).bindPopup('Mosu Coffee').addTo(map);
+        var CW = L.marker([-7.7783539, 110.3742366]).bindPopup('CW Coffee').addTo(map);
+        var Couvee = L.marker([-7.7574777, 110.3848754]).bindPopup('Couvee Jakal').addTo(map);
+        var Calf = L.marker([-7.7635796, 110.3766464]).bindPopup('Calf Coffee Industry').addTo(map);
+        var Reter = L.marker([-7.7565086, 110.3728401]).bindPopup('RETER Coffee').addTo(map);
+        var Bento = L.marker([-7.756368, 110.3734359]).bindPopup('Bento Kopi Pogung').addTo(map);
+        var Relasi = L.marker([-7.7567244, 110.3738524]).bindPopup('Relasi Co-Working').addTo(map);
+
+		// Memuat data GeoJSON
+		var geojsonData = {
+            "type": "FeatureCollection",
+            "features": [
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "name": "Polygon Cafe"
+                    },
+                    "geometry": {
+                        "type": "Polygon",
+                        "coordinates": [
+                            [
+                                [110.380, -7.760],
+                                [110.381, -7.760],
+                                [110.381, -7.761],
+                                [110.380, -7.761],
+                                [110.380, -7.760]
+                            ]
+                        ]
+                    }
+                }
+            ]
+        };
+
+		// Menambahkan layer GeoJSON ke peta
+		L.geoJSON(geojsonData, {
+			onEachFeature: function (feature, layer) {
+				layer.bindPopup(feature.properties.name);
+			}
+		}).addTo(map);
+
+
+        // Menambahkan kontrol routing (opsional)
+        L.Routing.control({
+            waypoints: [
+                L.latLng(-7.7600663, 110.3810964),
+                L.latLng(-7.7623764, 110.3791398)
+
+                // Tambahkan waypoint lain jika diperlukan
+            ],
+            waypointNameFallback: function(latLng) {
+                function zeroPad(n) {
+                    n = Math.round(n);
+                    return n < 10 ? '0' + n : n;
+                }
+                function sexagesimal(p, pos, neg) {
+                    var n = Math.abs(p),
+                        degs = Math.floor(n),
+                        mins = (n - degs) * 60,
+                        secs = (mins - Math.floor(mins)) * 60,
+                        frac = Math.round((secs - Math.floor(secs)) * 100);
+                    return (n >= 0 ? pos : neg) + degs + '°' +
+                        zeroPad(mins) + '\'' +
+                        zeroPad(secs) + '.' + zeroPad(frac) + '"';
+                }
+
+                return sexagesimal(latLng.lat, 'N', 'S') + ' ' + sexagesimal(latLng.lng, 'E', 'W');
+            },
+			position: 'bottomright'
+        }).addTo(map);
+
+    </script>
+</body>
+</html>
